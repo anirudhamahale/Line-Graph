@@ -25,11 +25,11 @@ class LineGraph: UIView {
     var showLines = true
     var showPoints = true
     var linesColor = UIColor.lightGray
-    var graphColor = UIColor.black
+    var graphColor = UIColor(red: 241/255, green: 146/255, blue: 51/255, alpha: 1)
     var labelFont = UIFont.systemFont(ofSize: 10)
     var labelColor = UIColor.black
-    var xAxisColor = UIColor.black
-    var yAxisColor = UIColor.black
+    var xAxisColor = UIColor.clear
+    var yAxisColor = UIColor.clear
     
     var xMargin: CGFloat = 20
     var originLabelText: String?
@@ -197,7 +197,7 @@ class LineGraph: UIView {
     // Returns a point for plotting
     func valueMarker() -> CALayer {
         let pointMarker = CALayer()
-        pointMarker.backgroundColor = backgroundColor?.cgColor
+        pointMarker.backgroundColor = graphColor.cgColor
         pointMarker.cornerRadius = 8
         pointMarker.masksToBounds = true
         
@@ -205,7 +205,7 @@ class LineGraph: UIView {
         markerInner.frame = CGRect(x: 3, y: 3, width: 10, height: 10)
         markerInner.cornerRadius = 5
         markerInner.masksToBounds = true
-        markerInner.backgroundColor = graphColor.cgColor
+        markerInner.backgroundColor = UIColor.white.cgColor
         
         pointMarker.addSublayer(markerInner)
         
