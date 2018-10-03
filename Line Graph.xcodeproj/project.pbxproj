@@ -13,6 +13,7 @@
 		8F1CACB42164DD9F005CEF5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CACB32164DD9F005CEF5C /* Assets.xcassets */; };
 		8F1CACB72164DD9F005CEF5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1CACB52164DD9F005CEF5C /* LaunchScreen.storyboard */; };
 		8F1CACBF2164DDC2005CEF5C /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CACBE2164DDC2005CEF5C /* LineGraph.swift */; };
+		8F1CACF2216512C7005CEF5C /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1CACF1216512C7005CEF5C /* BarGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8F1CACB62164DD9F005CEF5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F1CACB82164DD9F005CEF5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F1CACBE2164DDC2005CEF5C /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
+		8F1CACF1216512C7005CEF5C /* BarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8F1CACAC2164DD9D005CEF5C /* AppDelegate.swift */,
 				8F1CACAE2164DD9D005CEF5C /* ViewController.swift */,
 				8F1CACBE2164DDC2005CEF5C /* LineGraph.swift */,
+				8F1CACF1216512C7005CEF5C /* BarGraph.swift */,
 				8F1CACB02164DD9D005CEF5C /* Main.storyboard */,
 				8F1CACB32164DD9F005CEF5C /* Assets.xcassets */,
 				8F1CACB52164DD9F005CEF5C /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1CACF2216512C7005CEF5C /* BarGraph.swift in Sources */,
 				8F1CACAF2164DD9D005CEF5C /* ViewController.swift in Sources */,
 				8F1CACBF2164DDC2005CEF5C /* LineGraph.swift in Sources */,
 				8F1CACAD2164DD9D005CEF5C /* AppDelegate.swift in Sources */,
