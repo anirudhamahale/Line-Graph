@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        let panGestureRecogniser = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
         let lineGraph = LineGraph(frame: self.view.bounds, data: [
             ["Mon": 15],
             ["Tues" : 30],
@@ -25,8 +25,13 @@ class ViewController: UIViewController {
             ])
         
         self.view.addSubview(lineGraph)
+        
+        lineGraph.isUserInteractionEnabled = true
+        lineGraph.addGestureRecognizer(panGestureRecogniser)
     }
 
-
+    @objc func didPan(_ sender: UIPanGestureRecognizer) {
+        print(sender.translation(in: self.view))
+    }
 }
 

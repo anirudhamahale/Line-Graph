@@ -36,6 +36,8 @@ class LineGraph: UIView {
     var originLabelText: String?
     var originLabelColor = UIColor.black
     
+    // let panGestureRecogniser = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+    
     required init(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }
@@ -142,6 +144,9 @@ class LineGraph: UIView {
             originLabel.frame = CGRect(x: -2, y: graphHeight + 20, width: 40, height: 20)
             addSubview(originLabel)
         }
+        
+//        self.isUserInteractionEnabled = true
+//        self.addGestureRecognizer(panGestureRecogniser)
     }
     
     
@@ -194,7 +199,6 @@ class LineGraph: UIView {
         return label
     }
     
-    
     // Returns a point for plotting
     func valueMarker() -> CALayer {
         let pointMarker = CALayer()
@@ -215,4 +219,7 @@ class LineGraph: UIView {
         return pointMarker
     }
     
+    @objc func didPan(_ sender: UIPanGestureRecognizer) {
+        print(sender.translation(in: self))
+    }
 }
