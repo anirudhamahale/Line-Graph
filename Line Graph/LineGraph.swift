@@ -20,6 +20,7 @@ class LineGraph: UIView {
     private var axisWidth: CGFloat = 0
     private var axisHeight: CGFloat = 0
     private var everest: CGFloat = 0
+    private var coordinateHeight: CGFloat = 12
     
     // Graph Styles
     var showLines = true
@@ -175,7 +176,7 @@ class LineGraph: UIView {
         if(showPoints) {
             // Add a marker for this value
             let pointMarker = valueMarker()
-            pointMarker.frame = CGRect(x: xposition - 8, y: CGFloat(ceil(graphHeight - yposition) - 8), width: 16, height: 16)
+            pointMarker.frame = CGRect(x: xposition - coordinateHeight/2, y: CGFloat(ceil(graphHeight - yposition) - coordinateHeight/2), width: coordinateHeight, height: coordinateHeight)
             layer.addSublayer(pointMarker)
         }
     }
@@ -198,15 +199,17 @@ class LineGraph: UIView {
     func valueMarker() -> CALayer {
         let pointMarker = CALayer()
         pointMarker.backgroundColor = graphColor.cgColor
-        pointMarker.cornerRadius = 8
+        pointMarker.cornerRadius = coordinateHeight/2
         pointMarker.masksToBounds = true
         
         let markerInner = CALayer()
-        markerInner.frame = CGRect(x: 3, y: 3, width: 10, height: 10)
-        markerInner.cornerRadius = 5
+        let markerInnerHeight: CGFloat = coordinateHeight - 4
+        let originCoordinate = (coordinateHeight - markerInnerHeight) / 2
+        markerInner.frame = CGRect(x: originCoordinate, y: originCoordinate, width: markerInnerHeight, height: markerInnerHeight)
+        markerInner.cornerRadius = markerInnerHeight/2
         markerInner.masksToBounds = true
         markerInner.backgroundColor = UIColor.white.cgColor
-        
+
         pointMarker.addSublayer(markerInner)
         
         return pointMarker
